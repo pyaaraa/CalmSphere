@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Navbar from '../components/Navbar';
 import '../styles/global.css';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className="app">
       <Navbar />

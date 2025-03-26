@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="logo">CalmSphere</div>
