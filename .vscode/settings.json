@@ -1,0 +1,8 @@
+{
+    "editor.inlineSuggest.enabled": false,
+    "editor.inlineSuggest.edits.experimental.enabled": false,
+    "editor.quickSuggestions": {
+        "other": "off"
+    },
+    "editor.wordBasedSuggestions": "off"
+}
