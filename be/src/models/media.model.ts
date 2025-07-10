@@ -17,4 +17,3 @@ const MediaSchema: Schema = new Schema({
 const MediaModel = mongoose.model("Media", MediaSchema);
 
 export default MediaModel;
-  
