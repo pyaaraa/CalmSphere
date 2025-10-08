@@ -9,6 +9,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src", "src/config", "ws-be/dist"],
+  "include": ["src", "src/config", "src/types", "ws-be/dist"],
   "exclude": ["node_modules"]
 }

@@ -1,9 +1,10 @@
 import User from "../models/user.model";
 import asyncHandler from "../middlewares/async.handler";
-import { Request, Response } from "express";
+import { Request, response, Response } from "express";
 import bcrypt from "bcryptjs"
 // import { hash } from "crypto";
 import createToken from "../utils/createToken";
+import { request } from "http";
 
 const createUser = asyncHandler(async(req:Request,res:Response) => {
     const { name , email , password } = req.body;
@@ -76,6 +77,31 @@ const loginUser = asyncHandler(async (req:any, res:any) => {
 
   })
 
+  const getAllUsers = asyncHandler (async(req:Request , res :Response)=>{
+    const users = await User.find({});
+    res.json(users);
+
+  })
+
+  const getCurrentUserData = asyncHandler(async(req:Request,res:Response)=>{
+    const user = await User.findById(req.user._id)
+    if(user){
+      res.json({
+        _id:user._id,
+        email:user.email,
+        name: user.name
+      })
+    }
+    else{
+      res.status(404);
+      throw new Error("User not found")
+    }
+  })
 
 
-export { createUser, loginUser , logoutCurrentUser }
+  const updateProfile = asyncHandler(async(req:Request,res:Response) =>{
+    
+  })
+
+
+export { createUser, loginUser , logoutCurrentUser , getAllUsers ,getCurrentUserData, updateProfile}

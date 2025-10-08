@@ -6,7 +6,7 @@ import User from "../models/user.model"
 
 const authenticate = asyncHandler(async(req:Request , res:Response , next:NextFunction )=>{
     let token;
-    token = req.cookie.jwt;
+    token = req.cookies.jwt;
 
     if(token){
 
